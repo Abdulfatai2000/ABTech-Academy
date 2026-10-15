@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# ABTech Academy
 
-## Getting Started
+**Learn. Build. Master.** A responsive learning platform built with Next.js 16, React 19, TypeScript, Tailwind CSS and Lucide.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. No environment secrets or backend services are required for Phase 1.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validate
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run typecheck
+npm run build
+npx playwright install chromium
+npm test
+npm run format:check
+```
 
-## Learn More
+The browser suite starts and stops its own production server on port 3100. Build first; keep that port available. It checks desktop and 375px mobile layouts, accessibility in both themes, navigation, quizzes, progress persistence and malformed/unavailable storage. Generated reports and browser artifacts are ignored by Git.
 
-To learn more about Next.js, take a look at the following resources:
+## Explore
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/courses`: search and filter courses.
+- `/courses/react-native`: course introduction and curriculum.
+- `/learn/react-native`: connected ten-level roadmap.
+- `/learn/react-native/lessons/javascript-values`: start at the beginning.
+- `/learn/react-native/lessons/usestate`: detailed interactive lesson reader.
+- `/projects`: self-guided project briefs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Four beginner lessons are published. Eight later React Native modules and eight future courses are explicitly planned. Reading progress and bookmarks stay in this browser. The practice editor does not execute or assess code.
 
-## Deploy on Vercel
+## Documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Design system](docs/DESIGN_SYSTEM.md)
+- [Frontend architecture](docs/FRONTEND_ARCHITECTURE.md)
+- [Course content structure](docs/COURSE_CONTENT_STRUCTURE.md)
+- [Phase 1 implementation and validation](docs/PHASE_1_IMPLEMENTATION.md)
+- [Development log](docs/DEVELOPMENT_LOG.md)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Read the installed guides in `node_modules/next/dist/docs/` before modifying framework integration. This project retains Cache Components and Partial Prefetching from the original Next.js configuration.
