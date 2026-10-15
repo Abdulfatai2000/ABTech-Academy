@@ -1,26 +1,40 @@
 @import "tailwindcss";
+@import "../styles/academy.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #14243c;
+  --surface: #fff;
+  --muted: #56677d;
+  --line: #dce5ef;
+  --primary: #235de8;
+  --soft: #edf3ff;
+  --teal: #087c78;
+  --navy: #102440;
+  color-scheme: light;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  html:not([data-theme="light"]) { --background:#0b1423; --surface:#121f32; --foreground:#eaf0fa; --muted:#a7b7cc; --line:#2b3d55; --primary:#8eafff; --soft:#1b3050; --teal:#65d8c7; --navy:#091424; color-scheme:dark; }
 }
+html[data-theme="dark"] { --background:#0b1423; --surface:#121f32; --foreground:#eaf0fa; --muted:#a7b7cc; --line:#2b3d55; --primary:#8eafff; --soft:#1b3050; --teal:#65d8c7; --navy:#091424; color-scheme:dark; }
 
 body {
+  margin: 0;
+  line-height: 1.65;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+* { box-sizing:border-box; }
+a { color:inherit; text-decoration:none; } button,input,textarea { font:inherit; } button,summary { cursor:pointer; } button:disabled { cursor:not-allowed; opacity:.5; }
+:focus-visible { outline:3px solid var(--primary); outline-offset:5px; } ::selection { background:#b6d9fa; color:#102440; }
+h1,h2,h3,p { margin-top:0; } h1,h2,h3 { line-height:1.17; letter-spacing:-.035em; } h1 { font-size:clamp(2.5rem,5.5vw,4.8rem); } h2 { font-size:clamp(1.9rem,3vw,2.7rem); } h3 { font-size:1.25rem; } p { color:var(--muted); } svg { flex-shrink:0; } img { max-width:100%; }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
