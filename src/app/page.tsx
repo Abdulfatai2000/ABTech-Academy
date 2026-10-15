@@ -207,6 +207,53 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="section container experience-section" id="inside-a-lesson">
+        <div className="experience-copy">
+          <p className="eyebrow">Take a look inside a lesson</p>
+          <h2>
+            Understand it.
+            <br />
+            Then make it yours.
+          </h2>
+          <p className="lead">
+            A great lesson should leave you able to explain a concept, not just
+            copy some code. That is why our lessons move from simple explanations
+            to working examples, small practice tasks, and helpful feedback.
+          </p>
+          <p>
+            New to React? You can start with the JavaScript essentials and
+            learn the React ideas you need as you go. Already familiar? Follow
+            the roadmap to the topics you want to strengthen.
+          </p>
+          <ButtonLink href="/learn/react-native/lessons/usestate" secondary>
+            Explore a sample lesson
+          </ButtonLink>
+        </div>
+        <div className="experience-flow">
+          <p className="experience-label">THE LEARNING LOOP</p>
+          <ol>
+            {[
+              ["01", "Understand", "Start with the idea in everyday language."],
+              ["02", "Explore", "Read a real React Native example, line by line."],
+              ["03", "Practise", "Edit a practice draft and solve a focused challenge."],
+              ["04", "Reflect", "Check your reasoning and revisit what needs work."],
+            ].map(([number, title, description]) => (
+              <li key={number}>
+                <span className="experience-step-number">{number}</span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+                <Check size={17} aria-hidden="true" />
+              </li>
+            ))}
+          </ol>
+          <p className="experience-footnote">
+            Current lessons provide code examples and written output references.
+            Live React Native execution is planned for a later phase.
+          </p>
+        </div>
+      </section>
       <section className="section container grid two">
         <div>
           <p className="eyebrow">A little direction goes a long way</p>
