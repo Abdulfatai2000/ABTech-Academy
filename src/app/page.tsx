@@ -1,69 +1,18 @@
-import Image from "next/image";
+﻿import { ArrowRight, BookOpen, Check, CodeXml, GitBranch, Layers, Smartphone } from "lucide-react";
+import Link from "next/link";
+import { ButtonLink } from "@/components/ui/primitives";
+import { reactNative } from "@/data/courses";
+import "@/styles/home.css";
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <>
+    <section className="hero container"><div><p className="eyebrow"><span className="live-dot" /> A new way to learn development</p><h1>Small steps.<br />Real skills.<br /><span>Limitless possibilities.</span></h1><p className="lead">Go from “where do I start?” to “look what I built.” Learn software development through clear lessons, hands-on practice, and projects that bring it all together.</p><div className="row hero-actions"><ButtonLink href="/learn/react-native">Start learning</ButtonLink><ButtonLink href="/courses" secondary>Explore courses</ButtonLink></div><div className="row hero-notes"><span><Check size={14} /> Beginner friendly</span><span><Check size={14} /> Learn at your pace</span><span><Check size={14} /> No account needed</span></div></div><div className="hero-visual" aria-label="Illustration of a learning journey from JavaScript to a mobile app"><div className="visual-label"><CodeXml size={17} /> YOUR NEXT CHAPTER STARTS HERE</div><div className="journey-mini"><div><span className="mini-node"><Check size={17} /></span><span>Understand the basics<small>JavaScript essentials</small></span></div><div><span className="mini-node active"><CodeXml size={17} /></span><span>Make it interactive<small>Components, props & state</small></span></div><div><span className="mini-node"><Smartphone size={17} /></span><span>Build something yours<small>Your first mobile app</small></span></div></div><div className="code-window"><div className="window-bar"><span>● ● ●</span><span>MyFirstApp.tsx</span><span>React Native</span></div><pre><code><span className="code-purple">export default function</span> App() {'{'}<br />  <span className="code-purple">return</span> (<br />    &lt;<span className="code-teal">View</span>&gt;<br />      &lt;<span className="code-teal">Text</span>&gt;Hello, possibility.&lt;/<span className="code-teal">Text</span>&gt;<br />    &lt;/<span className="code-teal">View</span>&gt;<br />  );<br />{'}'}</code></pre></div><div className="visual-footer"><span className="live-dot" /> Every expert started with a first line.</div></div></section>
+    <div className="brand-strip"><div className="container row between"><strong>Learn. <span>Build.</span> Master.</strong><span>Understand the why.</span><span>Practice the how.</span><span>Build what’s next.</span></div></div>
+    <section className="section container"><div className="row between section-heading"><div><p className="eyebrow">One path. A world of possibilities.</p><h2>Your first course.<br />Your next big step.</h2></div><Link href="/courses" className="text-link">Browse all courses <ArrowRight size={17} /></Link></div><article className="featured"><div className="featured-art"><Smartphone size={100} strokeWidth={1} /><span className="orbit-label">React Native</span><span className="small">ONE CODEBASE. TWO PLATFORMS.</span></div><div className="featured-copy"><div className="row"><span className="badge">First course</span><span className="small muted">Beginner → Advanced pathway</span></div><h2>React Native<br />Masterclass</h2><p>{reactNative.description}</p><div className="row small muted"><span>{reactNative.levels.length} curriculum levels</span><span>·</span><span>Guided projects</span><span>·</span><span>Self-paced</span></div><div className="row" style={{ marginTop: 26 }}><ButtonLink href="/courses/react-native">Explore the masterclass</ButtonLink></div></div></article></section>
+    <section className="section how-section" id="how-it-works"><div className="container"><p className="eyebrow">Built around the way you learn</p><h2>Less overwhelm.<br />More “I get it.”</h2><div className="grid">{[{ icon: BookOpen, title: "Learn one clear concept", text: "Plain-language explanations, everyday analogies, and examples that make new ideas click." }, { icon: CodeXml, title: "Put your ideas to work", text: "Read the code, work through guided practice, and use hints when you need a little nudge." }, { icon: Layers, title: "Build your confidence", text: "Connect what you learn to practical projects. Follow a clear path and revisit any step." }].map(({ icon: Icon, title, text }, i) => <article className="learning-feature" key={title}><div className="row between"><span className="icon-box"><Icon size={24} /></span><span className="feature-number">0{i + 1}</span></div><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+    <section className="section container grid two"><div><p className="eyebrow">A little direction goes a long way</p><h2>Always know<br />your next step.</h2><p className="lead">A connected learning roadmap turns a big ambition into manageable milestones. See where you are, choose a module, and pick up where you left off.</p><div className="stack small"><span className="row"><Check size={17} /> Follow a beginner-to-advanced path</span><span className="row"><Check size={17} /> Save reading progress in this browser</span><span className="row"><Check size={17} /> Explore without locked doors</span></div><div style={{ marginTop: 25 }}><ButtonLink href="/learn/react-native" secondary>Explore the roadmap</ButtonLink></div></div><div className="roadmap-teaser"><GitBranch size={32} /><p className="eyebrow">Your journey, connected</p>{["JavaScript Essentials", "React Fundamentals", "React Native Core Components", "Styling and Layouts"].map((title, i) => <div className="teaser-node" key={title}><span>0{i}</span>{title}<ArrowRight size={15} /></div>)}</div></section>
+    <section className="section project-band"><div className="container"><div className="row between section-heading"><div><p className="eyebrow">From concepts to creations</p><h2>Make something<br />you can call your own.</h2></div><ButtonLink href="/projects" secondary>Explore project briefs</ButtonLink></div><div className="grid">{[["01", "Counter App", "Turn state and button presses into your first interactive app."], ["02", "Task Manager", "Bring lists, forms, and everyday organization together."], ["03", "CampusCare", "Plan a capstone that connects your skills to a campus community."]].map(([n, title, text]) => <article className="project-preview" key={title}><span className="project-index">PROJECT / {n}</span><h3>{title}</h3><p>{text}</p><Link href="/projects" className="text-link">View the brief <ArrowRight size={16} /></Link></article>)}</div></div></section>
+    <section className="section container"><p className="eyebrow">An academy that grows with you</p><h2>Start with mobile.<br />Keep your curiosity open.</h2><p>More learning paths are on the horizon. React Native is available now.</p><div className="row future-tags">{["JavaScript", "TypeScript", "React", "Next.js", "Python", "Java", "Kotlin", "Flutter"].map(name => <Link href="/courses" key={name}>{name}<span>Coming soon</span></Link>)}</div></section>
+    <section className="container closing"><p className="eyebrow">Your first step is a good place to start</p><h2>You don’t need to know everything.<br />Just be ready to learn.</h2><ButtonLink href="/learn/react-native/lessons/javascript-values">Let’s build your foundation</ButtonLink></section>
+  </>;
 }
