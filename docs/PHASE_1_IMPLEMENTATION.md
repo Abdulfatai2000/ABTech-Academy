@@ -24,4 +24,23 @@ Integrate an isolated Expo Snack adapter with loading/provider-error/fallback st
 
 ## Validation
 
-Validation outcomes and remaining limitations are recorded here after final checks. Required commands: `npm run lint`, `npx tsc --noEmit`, `npm run build`. Browser and data tests supplement these checks.
+Validation performed on 15 October 2026:
+
+- `npm run lint`: passed, no warnings or errors.
+- `npx tsc --noEmit`: passed.
+- `npm run build`: passed with the original Cache Components and Partial Prefetching configuration retained.
+- `npm run format:check`: passed.
+- `npm test`: 22 passed across desktop Chromium and 375px Chromium mobile emulation.
+- Automated axe WCAG A/AA scans: no violations on the tested public pages and focused lesson controls, including dark-theme scenarios.
+- Browser checks covered filtering/empty states, step deep links, bookmarks, reading completion, reload/resume, quiz retries, editor/reset/reference output, roadmap selection/list mode, theme persistence, mobile keyboard navigation, malformed/blocked storage and unknown slugs.
+- Tested public routes had no horizontal page overflow or uncaught browser exceptions. Desktop and mobile landing screenshots were visually reviewed.
+
+The tests do not establish universal accessibility conformance: screen-reader review, Safari/Firefox testing, real-device testing and the SRS beginner usability pilot remain future validation. Native React Native execution and automated assessment are explicitly outside Phase 1.
+
+`npm audit --omit=dev` reports zero vulnerabilities. The full `npm audit` reports five high findings in the existing development-only ESLint/fast-glob/micromatch/braces chain. The registry's proposed remediation downgrades `eslint-config-next` to 14.2.35. That incompatible downgrade was not applied; no force audit fix was used. Reassess the tooling chain when a compatible upstream fix is available.
+
+## Delivery history
+
+Work began from `135b218` on `main`; the first new commit is `334e0a6`. Commits were created for coherent foundations, individual pages, learning components, integration fixes, tests and documentation, with regular pushes to `https://github.com/Abdulfatai2000/ABTech-Academy.git`. The history is intentionally smaller than the approximate 30–50 target rather than splitting inseparable changes solely to increase the count. Use `git log --oneline 135b218..HEAD` for the complete delivery history.
+
+The supplied SRS PDF was untracked before development and remains untracked. All implementation files are committed; the PDF was neither modified nor added to implementation commits. No hosted deployment was requested or performed.
