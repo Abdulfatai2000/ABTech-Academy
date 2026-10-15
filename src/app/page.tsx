@@ -14,7 +14,7 @@ import "@/styles/home.css";
 
 export default function Home() {
   return (
-    <>
+    <div className="home-page">
       <section className="hero container">
         <div>
           <p className="eyebrow">
@@ -28,9 +28,10 @@ export default function Home() {
             <span>Limitless possibilities.</span>
           </h1>
           <p className="lead">
-            Go from “where do I start?” to “look what I built.” Learn software
-            development through clear lessons, hands-on practice, and projects
-            that bring it all together.
+            Go from “where do I start?” to “look what I built.” At ABTech
+            Academy, you learn one concept at a time, practise it with guided
+            activities, and turn new skills into projects you can proudly share.
+            Start with React Native, even if React is completely new to you.
           </p>
           <div className="row hero-actions">
             <ButtonLink href="/learn/react-native">Start learning</ButtonLink>
@@ -179,17 +180,17 @@ export default function Home() {
               {
                 icon: BookOpen,
                 title: "Learn one clear concept",
-                text: "Plain-language explanations, everyday analogies, and examples that make new ideas click.",
+                text: "Short explanations start with the why, then show the how. Everyday examples and clear code walk-throughs help beginners understand each idea before moving forward.",
               },
               {
                 icon: CodeXml,
                 title: "Put your ideas to work",
-                text: "Read the code, work through guided practice, and use hints when you need a little nudge.",
+                text: "See what the code does, change examples yourself, answer knowledge checks, and tackle small challenges. Hints help you reason through mistakes instead of memorizing solutions.",
               },
               {
                 icon: Layers,
                 title: "Build your confidence",
-                text: "Connect what you learn to practical projects. Follow a clear path and revisit any step.",
+                text: "Turn concepts into real app features as you progress. Revisit lessons, follow the connected roadmap, and gradually take ownership of bigger projects.",
               },
             ].map(({ icon: Icon, title, text }, i) => (
               <article className="learning-feature" key={title}>
@@ -215,9 +216,10 @@ export default function Home() {
             your next step.
           </h2>
           <p className="lead">
-            A connected learning roadmap turns a big ambition into manageable
-            milestones. See where you are, choose a module, and pick up where
-            you left off.
+            A visual, connected roadmap makes the journey from JavaScript basics to
+            production-ready mobile development less intimidating. Explore
+            modules in order, spot the next practical milestone, and pick up
+            where you left off on this device.
           </p>
           <div className="stack small">
             <span className="row">
@@ -273,17 +275,17 @@ export default function Home() {
               [
                 "01",
                 "Counter App",
-                "Turn state and button presses into your first interactive app.",
+                "Learn how state changes a mobile screen, then wire buttons to an interactive counter.",
               ],
               [
                 "02",
                 "Task Manager",
-                "Bring lists, forms, and everyday organization together.",
+                "Put components, forms, navigation, and stored data together in an everyday productivity app.",
               ],
               [
                 "03",
                 "CampusCare",
-                "Plan a capstone that connects your skills to a campus community.",
+                "Design an end-to-end campus support app that combines multiple real-world mobile skills.",
               ],
             ].map(([n, title, text]) => (
               <article className="project-preview" key={title}>
@@ -306,7 +308,10 @@ export default function Home() {
           Keep your curiosity open.
         </h2>
         <p>
-          More learning paths are on the horizon. React Native is available now.
+          ABTech Academy begins with React Native. Our long-term vision is a home
+          for clear, hands-on courses across programming languages, web
+          development, and mobile technologies. Future courses are shown as
+          upcoming—not as lessons that are already published.
         </p>
         <div className="row future-tags">
           {[
@@ -337,6 +342,6 @@ export default function Home() {
           Let’s build your foundation
         </ButtonLink>
       </section>
-    </>
+    </div>
   );
 }
