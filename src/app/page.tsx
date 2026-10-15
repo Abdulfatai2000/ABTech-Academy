@@ -9,6 +9,7 @@
 } from "lucide-react";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/primitives";
+import { SpotlightArticle } from "@/components/ui/spotlight-article";
 import { reactNative } from "@/data/courses";
 import "@/styles/home.css";
 
@@ -193,7 +194,7 @@ export default function Home() {
                 text: "Turn concepts into real app features as you progress. Revisit lessons, follow the connected roadmap, and gradually take ownership of bigger projects.",
               },
             ].map(({ icon: Icon, title, text }, i) => (
-              <article className="learning-feature" key={title}>
+              <SpotlightArticle className="learning-feature" key={title}>
                 <div className="row between">
                   <span className="icon-box">
                     <Icon size={24} />
@@ -202,7 +203,7 @@ export default function Home() {
                 </div>
                 <h3>{title}</h3>
                 <p>{text}</p>
-              </article>
+              </SpotlightArticle>
             ))}
           </div>
         </div>
@@ -335,14 +336,14 @@ export default function Home() {
                 "Design an end-to-end campus support app that combines multiple real-world mobile skills.",
               ],
             ].map(([n, title, text]) => (
-              <article className="project-preview" key={title}>
+              <SpotlightArticle className="project-preview" key={title}>
                 <span className="project-index">PROJECT / {n}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
                 <Link href="/projects" className="text-link">
                   View the brief <ArrowRight size={16} />
                 </Link>
-              </article>
+              </SpotlightArticle>
             ))}
           </div>
         </div>
