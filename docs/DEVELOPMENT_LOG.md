@@ -27,3 +27,12 @@
 - Reviewed desktop and mobile landing screenshots. Replaced the starter favicon with the academy code mark.
 - Formatted source for maintainability and documented setup, content contracts, architecture and Phase 2 boundaries.
 - Incremental Conventional Commits were pushed to the existing origin/main after coherent milestones. The original untracked SRS was preserved.
+
+## Homepage correction — Linear / Modern visual language
+
+- Kept the existing homepage structure and working navigation; expanded descriptive copy for beginner learning, guided projects, the connected roadmap and future courses.
+- Added a focused `inside-a-lesson` walkthrough that distinguishes current explanations and practice drafts from planned live React Native execution.
+- Introduced homepage-scoped dark/light visual tokens, layered ambient backgrounds, gradient headline, refined CTAs, cards and responsive spacing; lesson routes remain unchanged.
+- Added low-overhead pointer spotlights to selected feature and project cards, with no effect required for mobile or keyboard operation.
+- Committed changes as separate milestones directly on the connected `main` branch. See `docs/HOMEPAGE_VISUAL_REFINEMENT.md` for design details and follow-up QA.
+- Source-level checks confirmed matching JSX component tags and balanced CSS braces. **Full lint, TypeScript, production build and Playwright tests were not run in the GitHub editing environment**; they must be executed in the local clone before declaring the correction fully tested.
