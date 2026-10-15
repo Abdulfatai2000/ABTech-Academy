@@ -1,3 +1,38 @@
 import Link from "next/link";
 import { Brand } from "@/components/ui/primitives";
-export function Footer() { return <footer className="site-footer"><div className="container"><div className="footer-grid"><div><Brand /><p className="small" style={{ marginTop: 18, maxWidth: 330 }}>Learn. Build. Master.<br />A thoughtful place to grow from curious beginner to confident developer.</p></div><div className="footer-links"><strong>Explore the academy</strong><Link href="/courses">All courses</Link><Link href="/courses/react-native">React Native Masterclass</Link><Link href="/projects">Project library</Link></div><div className="footer-links"><strong>Your learning journey</strong><Link href="/learn/react-native">Learning roadmap</Link><Link href="/learn/react-native/lessons/usestate">Try a sample lesson</Link><Link href="/#how-it-works">How it works</Link></div></div><div className="footer-bottom"><span>© 2026 ABTech Academy</span><span>Phase 1 preview · Progress stays in this browser</span></div></div></footer>; }
+export function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="container">
+        <div className="footer-grid">
+          <div>
+            <Brand />
+            <p className="small" style={{ marginTop: 18, maxWidth: 330 }}>
+              Learn. Build. Master.
+              <br />A thoughtful place to grow from curious beginner to
+              confident developer.
+            </p>
+          </div>
+          <div className="footer-links">
+            <strong>Explore the academy</strong>
+            <Link href="/courses">All courses</Link>
+            <Link href="/courses/react-native">React Native Masterclass</Link>
+            <Link href="/projects">Project library</Link>
+          </div>
+          <div className="footer-links">
+            <strong>Your learning journey</strong>
+            <Link href="/learn/react-native">Learning roadmap</Link>
+            <Link href="/learn/react-native/lessons/usestate">
+              Try a sample lesson
+            </Link>
+            <Link href="/#how-it-works">How it works</Link>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© 2026 ABTech Academy</span>
+          <span>Phase 1 preview · Progress stays in this browser</span>
+        </div>
+      </div>
+    </footer>
+  );
+}

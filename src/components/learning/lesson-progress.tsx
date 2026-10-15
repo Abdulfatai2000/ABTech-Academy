@@ -1,1 +1,21 @@
-export function LessonProgress({ value, max, label }: { value: number; max: number; label: string }) { return <div className="lesson-progress"><div className="row between small"><span>{label}</span><span>{value} / {max}</span></div><progress aria-label={label} value={value} max={Math.max(1, max)} /></div>; }
+export function LessonProgress({
+  value,
+  max,
+  label,
+}: {
+  value: number;
+  max: number;
+  label: string;
+}) {
+  return (
+    <div className="lesson-progress">
+      <div className="row between small">
+        <span>{label}</span>
+        <span>
+          {value} / {max}
+        </span>
+      </div>
+      <progress aria-label={label} value={value} max={Math.max(1, max)} />
+    </div>
+  );
+}
