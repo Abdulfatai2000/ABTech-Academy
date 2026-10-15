@@ -1,0 +1,3 @@
+import type { Exercise } from "@/types/course";
+import { CodeBlock } from "./code-block";
+export function ExerciseCard({ exercise }: { exercise: Exercise }) { return <section className="card exercise"><p className="eyebrow">Your turn</p><h3>Try it, then reflect</h3><p>{exercise.instructions}</p>{exercise.hints.map((hint, i) => <details key={hint}><summary>Hint {i + 1}</summary><p>{hint}</p></details>)}{exercise.solution && <details><summary>Show an example solution</summary><p className="small">Compare the approach with yours. This is a reference, not an assessment of your code.</p><CodeBlock source={exercise.solution} /></details>}</section>; }
