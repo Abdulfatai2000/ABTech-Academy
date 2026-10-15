@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useHydrated } from "@/hooks/use-hydrated";
 export interface PreviewAdapter {
   mode: "reference" | "expo-snack";
   title: string;
@@ -28,6 +29,7 @@ export function Playground({
   output: string;
 }) {
   const [code, setCode] = useState(initialCode);
+  const hydrated = useHydrated();
   const [tab, setTab] = useState("editor");
   const [status, setStatus] = useState("");
   return (
@@ -56,6 +58,7 @@ export function Playground({
           </label>
           <textarea
             id="practice-code"
+            disabled={!hydrated}
             className="field practice-editor"
             value={code}
             onChange={(event) => setCode(event.target.value)}

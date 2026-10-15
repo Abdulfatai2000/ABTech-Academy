@@ -210,7 +210,7 @@
 }
 .feature-number {
   font-size: 2rem;
-  color: var(--line);
+  color: var(--muted);
   font-weight: 700;
 }
 .roadmap-teaser {
