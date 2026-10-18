@@ -5,7 +5,7 @@
 ## Initial inventory
 
 - React Native: ten levels, one module per level.
-- Four published lessons: Values and variables; Functions and arrays; Components and props; Making your app interactive with useState.
+- Five published lessons: Values and variables; Decisions with conditionals; Functions and arrays; Components and props; Making your app interactive with useState.
 - The useState lesson has seventeen focused steps and five explained questions.
 - Eight later React Native modules are explicitly planned, with objectives and project connections.
 - Eight future courses are marked coming soon.
