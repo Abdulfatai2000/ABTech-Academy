@@ -6,6 +6,7 @@ const curriculum = [
     "JavaScript Essentials",
     "Understand values, variables and functions before writing your first component.",
     "Values and variables",
+    "Decisions with conditionals",
     "Functions and arrays",
   ],
   [
@@ -81,7 +82,7 @@ export const modules: Module[] = curriculum.map(
     prerequisites: index ? [curriculum[index - 1][0]] : [],
     lessonSlugs:
       index === 0
-        ? ["javascript-values", "javascript-functions"]
+        ? ["javascript-values", "javascript-conditionals", "javascript-functions"]
         : index === 1
           ? ["components-and-props", "usestate"]
           : [],
