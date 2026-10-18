@@ -82,6 +82,82 @@ export const lessons: Lesson[] = [
     ],
   },
   {
+    slug: "javascript-conditionals",
+    title: "Decisions with conditionals",
+    minutes: 18,
+    objectives: [
+      "Explain how a boolean controls a decision",
+      "Write if, else if and else branches",
+      "Use a conditional to choose a React Native message",
+    ],
+    steps: [
+      {
+        id: "intro",
+        title: "Teach your app to decide",
+        body: "A useful app responds differently to different situations. A weather screen may warn about rain; a study tracker may celebrate a completed goal. JavaScript conditionals let you choose what happens based on a true-or-false condition. Read Values and variables first if booleans are new.",
+      },
+      {
+        id: "conditions",
+        title: "Read an if statement",
+        body: "An if block runs only when its condition is truthy. The else block runs when the condition is falsy. Prefer explicit comparisons such as >= for a numeric goal. === checks equality without converting types.",
+        code: {
+          language: "javascript",
+          source: "const lessonsFinished = 3;\nconst dailyGoal = 2;\nif (lessonsFinished >= dailyGoal) {\n  console.log('Goal reached!');\n} else {\n  console.log('Keep learning!');\n}",
+          output: "Goal reached!",
+        },
+      },
+      {
+        id: "branches",
+        title: "Choose between several outcomes",
+        body: "Use else if when there is a second condition to check. JavaScript checks the branches from top to bottom and runs the first matching branch. Put the most specific conditions first when ranges overlap.",
+        code: {
+          language: "javascript",
+          source: "const progress = 70;\nif (progress === 100) {\n  console.log('Complete');\n} else if (progress >= 50) {\n  console.log('Halfway there');\n} else {\n  console.log('Getting started');\n}",
+          output: "Halfway there",
+        },
+      },
+      {
+        id: "native",
+        title: "Show a message on a mobile screen",
+        body: "React Native uses the same JavaScript decisions. Here a ternary expression chooses which message the Text component displays. This is a complete static example: it does not change on its own until you introduce state in a later lesson.",
+        code: {
+          language: "tsx",
+          source: "import { View, Text } from 'react-native';\n\nexport default function App() {\n  const completed = 2;\n  const target = 3;\n  return (\n    <View style={{ padding: 24 }}>\n      <Text>{completed >= target ? 'Goal reached!' : 'One more lesson to go!'}</Text>\n    </View>\n  );\n}",
+          output: "One more lesson to go!",
+        },
+      },
+      {
+        id: "practice",
+        title: "Build a study reminder",
+        body: "Try the task in your own JavaScript environment or on paper. The academy practice editor does not execute or grade code yet.",
+        exercise: {
+          instructions: "Create a variable named minutesStudied with value 25. Print 'Take a break' when it is at least 25, otherwise print 'Keep focusing'. Then change the value to 10 and predict the output.",
+          hints: [
+            "Use an if statement and compare minutesStudied with 25.",
+            "Remember that >= means greater than or equal to.",
+          ],
+          solution: "let minutesStudied = 25;\nif (minutesStudied >= 25) {\n  console.log('Take a break');\n} else {\n  console.log('Keep focusing');\n}\n// If minutesStudied becomes 10, the message is 'Keep focusing'.",
+        },
+      },
+      {
+        id: "check",
+        title: "Check your understanding",
+        body: "Think about which branch executes first.",
+        quiz: {
+          question: "If progress is 100, what does the example with if / else if display?",
+          options: ["Complete", "Halfway there", "Getting started"],
+          answer: 0,
+          explanation: "The first condition progress === 100 is true, so the remaining branches are skipped.",
+        },
+      },
+      {
+        id: "reflect",
+        title: "Decisions make interfaces useful",
+        body: "You can now select different outcomes using booleans and comparisons. Next, learn how functions package behavior and how arrays organize lists of data. Later you will combine conditions with React state to make your screens respond to taps.",
+      },
+    ],
+  },
+  {
     slug: "javascript-functions",
     title: "Functions and arrays",
     minutes: 15,
